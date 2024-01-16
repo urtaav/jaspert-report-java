@@ -10,6 +10,7 @@ import java.io.File;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,12 +42,12 @@ public class SpringBootJasperApplication {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
 			Map<String, Object> parameters= new HashMap<>();
-			parameters.put("voucher_id", "00000045634");
-			parameters.put("current_date", formatter.format(localDateTime));
-			parameters.put("AmountPaid", new BigDecimal(30000));
-			parameters.put("payment_method", "Cash");
-			parameters.put("parent_name", "Santiago Perez");
-			parameters.put("child_name", "Sofia Perez");
+			parameters.put("folio", "00000045634");
+			parameters.put("currentDate", new Date());
+			parameters.put("name", "Samantha");
+			parameters.put("firstName", "Timoteo");
+			parameters.put("lastName", "Kim");
+			parameters.put("institucion", "0 Sujeto obligado para pruebas Desarrollo");
 			parameters.put("imageDir", "classpath:/static/images/");
 
 			JasperReport report = JasperCompileManager.compileReport(filePath);
